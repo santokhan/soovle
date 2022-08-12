@@ -107,7 +107,6 @@
                     </div>
                 </section>
 
-
                 <div class="rounded-xl sm:rounded-2xl py-6 lg:px-12 lg:pb-12">
                     <form class="py-0 px-4 sm:p-4 md:px-10 md:py-4" id="searchForm">
                         <div class="sm:px-2 md:px-10 flex item-center relative">
@@ -119,6 +118,10 @@
 
                     <!-- Add hidden class below -->
                     <div class="flex flex-wrap hidden py-4" id="cards">
+                        <div class="w-full uppercase text-2xl font-medium flex justify-center items-center text-gray-900">
+                            <div>Suggestions A to Z</div>
+                        </div>
+
                         <div class="w-1/2 py-2 px-1 sm:px-2">
                             <div class="bg-white py-4 sm:py-6 px-2 sm:px-6 rounded-2xl shadow-lg">
                                 <div class="font-medium h-4 sm:h-6 flex justify-center mb-2 sm:mb-4 text-3xl">A</div>
@@ -511,7 +514,398 @@
                         </div>
                     </div>
 
-                    <footer class="px-4 sm:px-8 pt-4 md:pt-4 xl:pt-6">
+                    <!-- Add hidden class below -->
+                    <div class="flex flex-wrap hidden py-4" id="questionCards">
+                        <div class="w-full uppercase text-2xl font-medium flex justify-center items-center text-gray-900">
+                            <div>WH Questions</div>
+                        </div>
+
+                        <div class="w-1/2 py-2 px-1 sm:px-2">
+                            <div class="bg-white py-4 sm:py-6 px-2 sm:px-6 rounded-2xl shadow-lg">
+                                <div class="font-medium h-4 sm:h-6 mb-2 sm:mb-4 text-3xl">What</div>
+                                <div class="key-card py-2" id="card_what"></div>
+                                <div class="flex justify-center pt-4">
+                                    <button type="button"
+                                        class="bg-gray-800 hover:bg-gray-600 font-medium py-1 px-4 rounded-xl text-white shadow-xl border-2 border-transparent focus:bg-gray-800 focus:border-gray-900 copy card_what">
+                                        <i class="fas fa-copy"></i><span> Copy</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-1/2 py-2 px-1 sm:px-2">
+                            <div class="bg-white py-4 sm:py-6 px-2 sm:px-6 rounded-2xl shadow-lg">
+                                <div class="font-medium h-4 sm:h-6 mb-2 sm:mb-4 text-3xl">Where</div>
+                                <div class="key-card py-2" id="card_where"></div>
+                                <div class="flex justify-center pt-4">
+                                    <button type="button"
+                                        class="bg-gray-800 hover:bg-gray-600 font-medium py-1 px-4 rounded-xl text-white shadow-xl border-2 border-transparent focus:bg-gray-800 focus:border-gray-900 copy card_where">
+                                        <i class="fas fa-copy"></i><span> Copy</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-1/2 py-2 px-1 sm:px-2">
+                            <div class="bg-white py-4 sm:py-6 px-2 sm:px-6 rounded-2xl shadow-lg">
+                                <div class="font-medium h-4 sm:h-6 mb-2 sm:mb-4 text-3xl">Which</div>
+                                <div class="key-card py-2" id="card_which"></div>
+                                <div class="flex justify-center pt-4">
+                                    <button type="button"
+                                        class="bg-gray-800 hover:bg-gray-600 font-medium py-1 px-4 rounded-xl text-white shadow-xl border-2 border-transparent focus:bg-gray-800 focus:border-gray-900 copy card_which">
+                                        <i class="fas fa-copy"></i><span> Copy</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-1/2 py-2 px-1 sm:px-2">
+                            <div class="bg-white py-4 sm:py-6 px-2 sm:px-6 rounded-2xl shadow-lg">
+                                <div class="font-medium h-4 sm:h-6 mb-2 sm:mb-4 text-3xl">Who</div>
+                                <div class="key-card py-2" id="card_who"></div>
+                                <div class="flex justify-center pt-4">
+                                    <button type="button"
+                                        class="bg-gray-800 hover:bg-gray-600 font-medium py-1 px-4 rounded-xl text-white shadow-xl border-2 border-transparent focus:bg-gray-800 focus:border-gray-900 copy card_who">
+                                        <i class="fas fa-copy"></i><span> Copy</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Ads 1 -->
+                        <div class="w-full py-2 px-1 sm:px-2 block sm:hidden">
+                            <div class="bg-white py-4 sm:py-6 px-2 sm:px-6 rounded-2xl shadow-lg flex justify-center items-center">
+                                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2489885381183873" crossorigin="anonymous"></script>
+                                <!-- Soovle Mobile -->
+                                <ins class="adsbygoogle" style="display:inline-block;width:320px;height:100px" data-ad-client="ca-pub-2489885381183873" data-ad-slot="4773270096"></ins>
+                                <script>
+                                    (adsbygoogle = window.adsbygoogle || []).push({});
+                                </script>
+                            </div>
+                        </div>
+
+                        <div class="w-1/2 py-2 px-1 sm:px-2">
+                            <div class="bg-white py-4 sm:py-6 px-2 sm:px-6 rounded-2xl shadow-lg">
+                                <div class="font-medium h-4 sm:h-6 mb-2 sm:mb-4 text-3xl">How</div>
+                                <div class="key-card py-2" id="card_how"></div>
+                                <div class="flex justify-center pt-4">
+                                    <button type="button"
+                                        class="bg-gray-800 hover:bg-gray-600 font-medium py-1 px-4 rounded-xl text-white shadow-xl border-2 border-transparent focus:bg-gray-800 focus:border-gray-900 copy card_how">
+                                        <i class="fas fa-copy"></i><span> Copy</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-1/2 py-2 px-1 sm:px-2">
+                            <div class="bg-white py-4 sm:py-6 px-2 sm:px-6 rounded-2xl shadow-lg">
+                                <div class="font-medium h-4 sm:h-6 mb-2 sm:mb-4 text-3xl">How</div>
+                                <div class="key-card py-2" id="card_when"></div>
+                                <div class="flex justify-center pt-4">
+                                    <button type="button"
+                                        class="bg-gray-800 hover:bg-gray-600 font-medium py-1 px-4 rounded-xl text-white shadow-xl border-2 border-transparent focus:bg-gray-800 focus:border-gray-900 copy card_when">
+                                        <i class="fas fa-copy"></i><span> Copy</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-1/2 py-2 px-1 sm:px-2">
+                            <div class="bg-white py-4 sm:py-6 px-2 sm:px-6 rounded-2xl shadow-lg">
+                                <div class="font-medium h-4 sm:h-6 mb-2 sm:mb-4 text-3xl">Are</div>
+                                <div class="key-card py-2" id="card_are"></div>
+                                <div class="flex justify-center pt-4">
+                                    <button type="button"
+                                        class="bg-gray-800 hover:bg-gray-600 font-medium py-1 px-4 rounded-xl text-white shadow-xl border-2 border-transparent focus:bg-gray-800 focus:border-gray-900 copy card_are">
+                                        <i class="fas fa-copy"></i><span> Copy</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-1/2 py-2 px-1 sm:px-2">
+                            <div class="bg-white py-4 sm:py-6 px-2 sm:px-6 rounded-2xl shadow-lg">
+                                <div class="font-medium h-4 sm:h-6 mb-2 sm:mb-4 text-3xl">Is</div>
+                                <div class="key-card py-2" id="card_is"></div>
+                                <div class="flex justify-center pt-4">
+                                    <button type="button"
+                                        class="bg-gray-800 hover:bg-gray-600 font-medium py-1 px-4 rounded-xl text-white shadow-xl border-2 border-transparent focus:bg-gray-800 focus:border-gray-900 copy card_is">
+                                        <i class="fas fa-copy"></i><span> Copy</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Ads 2 -->
+                        <div class="w-full py-2 px-1 sm:px-2 block sm:hidden">
+                            <div class="bg-white py-4 sm:py-6 px-2 sm:px-6 rounded-2xl shadow-lg flex justify-center items-center">
+                                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2489885381183873" crossorigin="anonymous"></script>
+                                <!-- Soovle Mobile -->
+                                <ins class="adsbygoogle" style="display:inline-block;width:320px;height:100px" data-ad-client="ca-pub-2489885381183873" data-ad-slot="4773270096"></ins>
+                                <script>
+                                    (adsbygoogle = window.adsbygoogle || []).push({});
+                                </script>
+                            </div>
+                        </div>
+
+                        <div class="w-1/2 py-2 px-1 sm:px-2">
+                            <div class="bg-white py-4 sm:py-6 px-2 sm:px-6 rounded-2xl shadow-lg">
+                                <div class="font-medium h-4 sm:h-6 mb-2 sm:mb-4 text-3xl">Do</div>
+                                <div class="key-card py-2" id="card_do"></div>
+                                <div class="flex justify-center pt-4">
+                                    <button type="button"
+                                        class="bg-gray-800 hover:bg-gray-600 font-medium py-1 px-4 rounded-xl text-white shadow-xl border-2 border-transparent focus:bg-gray-800 focus:border-gray-900 copy card_do">
+                                        <i class="fas fa-copy"></i><span> Copy</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Add hidden class below -->
+                    <div class="flex flex-wrap hidden py-4" id="prefix">
+                        <div class="w-full uppercase text-2xl font-medium flex justify-center items-center text-gray-900">
+                            <div>Prefix</div>
+                        </div>
+
+                        <div class="w-1/2 py-2 px-1 sm:px-2">
+                            <div class="bg-white py-4 sm:py-6 px-2 sm:px-6 rounded-2xl shadow-lg">
+                                <div class="font-medium h-4 sm:h-6 mb-2 sm:mb-4 text-3xl">Best</div>
+                                <div class="key-card py-2" id="card_best"></div>
+                                <div class="flex justify-center pt-4">
+                                    <button type="button"
+                                        class="bg-gray-800 hover:bg-gray-600 font-medium py-1 px-4 rounded-xl text-white shadow-xl border-2 border-transparent focus:bg-gray-800 focus:border-gray-900 copy card_best">
+                                        <i class="fas fa-copy"></i><span> Copy</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-1/2 py-2 px-1 sm:px-2">
+                            <div class="bg-white py-4 sm:py-6 px-2 sm:px-6 rounded-2xl shadow-lg">
+                                <div class="font-medium h-4 sm:h-6 mb-2 sm:mb-4 text-3xl">Most</div>
+                                <div class="key-card py-2" id="card_most"></div>
+                                <div class="flex justify-center pt-4">
+                                    <button type="button"
+                                        class="bg-gray-800 hover:bg-gray-600 font-medium py-1 px-4 rounded-xl text-white shadow-xl border-2 border-transparent focus:bg-gray-800 focus:border-gray-900 copy card_most">
+                                        <i class="fas fa-copy"></i><span> Copy</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="w-1/2 py-2 px-1 sm:px-2">
+                            <div class="bg-white py-4 sm:py-6 px-2 sm:px-6 rounded-2xl shadow-lg">
+                                <div class="font-medium h-4 sm:h-6 mb-2 sm:mb-4 text-3xl">New</div>
+                                <div class="key-card py-2" id="card_new"></div>
+                                <div class="flex justify-center pt-4">
+                                    <button type="button"
+                                        class="bg-gray-800 hover:bg-gray-600 font-medium py-1 px-4 rounded-xl text-white shadow-xl border-2 border-transparent focus:bg-gray-800 focus:border-gray-900 copy card_new">
+                                        <i class="fas fa-copy"></i><span> Copy</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-1/2 py-2 px-1 sm:px-2">
+                            <div class="bg-white py-4 sm:py-6 px-2 sm:px-6 rounded-2xl shadow-lg">
+                                <div class="font-medium h-4 sm:h-6 mb-2 sm:mb-4 text-3xl">Unique</div>
+                                <div class="key-card py-2" id="card_unique"></div>
+                                <div class="flex justify-center pt-4">
+                                    <button type="button"
+                                        class="bg-gray-800 hover:bg-gray-600 font-medium py-1 px-4 rounded-xl text-white shadow-xl border-2 border-transparent focus:bg-gray-800 focus:border-gray-900 copy card_unique">
+                                        <i class="fas fa-copy"></i><span> Copy</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Ads 1 -->
+                        <div class="w-full py-2 px-1 sm:px-2 block sm:hidden">
+                            <div class="bg-white py-4 sm:py-6 px-2 sm:px-6 rounded-2xl shadow-lg flex justify-center items-center">
+                                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2489885381183873" crossorigin="anonymous"></script>
+                                <!-- Soovle Mobile -->
+                                <ins class="adsbygoogle" style="display:inline-block;width:320px;height:100px" data-ad-client="ca-pub-2489885381183873" data-ad-slot="4773270096"></ins>
+                                <script>
+                                    (adsbygoogle = window.adsbygoogle || []).push({});
+                                </script>
+                            </div>
+                        </div>
+
+                        <div class="w-1/2 py-2 px-1 sm:px-2">
+                            <div class="bg-white py-4 sm:py-6 px-2 sm:px-6 rounded-2xl shadow-lg">
+                                <div class="font-medium h-4 sm:h-6 mb-2 sm:mb-4 text-3xl">Learn</div>
+                                <div class="key-card py-2" id="card_learn"></div>
+                                <div class="flex justify-center pt-4">
+                                    <button type="button"
+                                        class="bg-gray-800 hover:bg-gray-600 font-medium py-1 px-4 rounded-xl text-white shadow-xl border-2 border-transparent focus:bg-gray-800 focus:border-gray-900 copy card_learn">
+                                        <i class="fas fa-copy"></i><span> Copy</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-1/2 py-2 px-1 sm:px-2">
+                            <div class="bg-white py-4 sm:py-6 px-2 sm:px-6 rounded-2xl shadow-lg">
+                                <div class="font-medium h-4 sm:h-6 mb-2 sm:mb-4 text-3xl">How To</div>
+                                <div class="key-card py-2" id="card_how_to"></div>
+                                <div class="flex justify-center pt-4">
+                                    <button type="button"
+                                        class="bg-gray-800 hover:bg-gray-600 font-medium py-1 px-4 rounded-xl text-white shadow-xl border-2 border-transparent focus:bg-gray-800 focus:border-gray-900 copy card_how_to">
+                                        <i class="fas fa-copy"></i><span> Copy</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-1/2 py-2 px-1 sm:px-2">
+                            <div class="bg-white py-4 sm:py-6 px-2 sm:px-6 rounded-2xl shadow-lg">
+                                <div class="font-medium h-4 sm:h-6 mb-2 sm:mb-4 text-3xl">Top</div>
+                                <div class="key-card py-2" id="card_top"></div>
+                                <div class="flex justify-center pt-4">
+                                    <button type="button"
+                                        class="bg-gray-800 hover:bg-gray-600 font-medium py-1 px-4 rounded-xl text-white shadow-xl border-2 border-transparent focus:bg-gray-800 focus:border-gray-900 copy card_top">
+                                        <i class="fas fa-copy"></i><span> Copy</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Add hidden class below -->
+                    <div class="flex flex-wrap hidden py-4" id="suffix">
+                        <div class="w-full uppercase text-2xl font-medium flex justify-center items-center text-gray-900">
+                            <div>Suffix</div>
+                        </div>
+
+                        <div class="w-1/2 py-2 px-1 sm:px-2">
+                            <div class="bg-white py-4 sm:py-6 px-2 sm:px-6 rounded-2xl shadow-lg">
+                                <div class="font-medium h-4 sm:h-6 mb-2 sm:mb-4 text-3xl">To</div>
+                                <div class="key-card py-2" id="card_to"></div>
+                                <div class="flex justify-center pt-4">
+                                    <button type="button"
+                                        class="bg-gray-800 hover:bg-gray-600 font-medium py-1 px-4 rounded-xl text-white shadow-xl border-2 border-transparent focus:bg-gray-800 focus:border-gray-900 copy card_to">
+                                        <i class="fas fa-copy"></i><span> Copy</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-1/2 py-2 px-1 sm:px-2">
+                            <div class="bg-white py-4 sm:py-6 px-2 sm:px-6 rounded-2xl shadow-lg">
+                                <div class="font-medium h-4 sm:h-6 mb-2 sm:mb-4 text-3xl">Must</div>
+                                <div class="key-card py-2" id="card_must"></div>
+                                <div class="flex justify-center pt-4">
+                                    <button type="button"
+                                        class="bg-gray-800 hover:bg-gray-600 font-medium py-1 px-4 rounded-xl text-white shadow-xl border-2 border-transparent focus:bg-gray-800 focus:border-gray-900 copy card_must">
+                                        <i class="fas fa-copy"></i><span> Copy</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="w-1/2 py-2 px-1 sm:px-2">
+                            <div class="bg-white py-4 sm:py-6 px-2 sm:px-6 rounded-2xl shadow-lg">
+                                <div class="font-medium h-4 sm:h-6 mb-2 sm:mb-4 text-3xl">With</div>
+                                <div class="key-card py-2" id="card_with"></div>
+                                <div class="flex justify-center pt-4">
+                                    <button type="button"
+                                        class="bg-gray-800 hover:bg-gray-600 font-medium py-1 px-4 rounded-xl text-white shadow-xl border-2 border-transparent focus:bg-gray-800 focus:border-gray-900 copy card_with">
+                                        <i class="fas fa-copy"></i><span> Copy</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-1/2 py-2 px-1 sm:px-2">
+                            <div class="bg-white py-4 sm:py-6 px-2 sm:px-6 rounded-2xl shadow-lg">
+                                <div class="font-medium h-4 sm:h-6 mb-2 sm:mb-4 text-3xl">For</div>
+                                <div class="key-card py-2" id="card_for"></div>
+                                <div class="flex justify-center pt-4">
+                                    <button type="button"
+                                        class="bg-gray-800 hover:bg-gray-600 font-medium py-1 px-4 rounded-xl text-white shadow-xl border-2 border-transparent focus:bg-gray-800 focus:border-gray-900 copy card_for">
+                                        <i class="fas fa-copy"></i><span> Copy</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Ads 1 -->
+                        <div class="w-full py-2 px-1 sm:px-2 block sm:hidden">
+                            <div class="bg-white py-4 sm:py-6 px-2 sm:px-6 rounded-2xl shadow-lg flex justify-center items-center">
+                                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2489885381183873" crossorigin="anonymous"></script>
+                                <!-- Soovle Mobile -->
+                                <ins class="adsbygoogle" style="display:inline-block;width:320px;height:100px" data-ad-client="ca-pub-2489885381183873" data-ad-slot="4773270096"></ins>
+                                <script>
+                                    (adsbygoogle = window.adsbygoogle || []).push({});
+                                </script>
+                            </div>
+                        </div>
+
+                        <div class="w-1/2 py-2 px-1 sm:px-2">
+                            <div class="bg-white py-4 sm:py-6 px-2 sm:px-6 rounded-2xl shadow-lg">
+                                <div class="font-medium h-4 sm:h-6 mb-2 sm:mb-4 text-3xl">Under</div>
+                                <div class="key-card py-2" id="card_under"></div>
+                                <div class="flex justify-center pt-4">
+                                    <button type="button"
+                                        class="bg-gray-800 hover:bg-gray-600 font-medium py-1 px-4 rounded-xl text-white shadow-xl border-2 border-transparent focus:bg-gray-800 focus:border-gray-900 copy card_under">
+                                        <i class="fas fa-copy"></i><span> Copy</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-1/2 py-2 px-1 sm:px-2">
+                            <div class="bg-white py-4 sm:py-6 px-2 sm:px-6 rounded-2xl shadow-lg">
+                                <div class="font-medium h-4 sm:h-6 mb-2 sm:mb-4 text-3xl">And</div>
+                                <div class="key-card py-2" id="card_and"></div>
+                                <div class="flex justify-center pt-4">
+                                    <button type="button"
+                                        class="bg-gray-800 hover:bg-gray-600 font-medium py-1 px-4 rounded-xl text-white shadow-xl border-2 border-transparent focus:bg-gray-800 focus:border-gray-900 copy card_and">
+                                        <i class="fas fa-copy"></i><span> Copy</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-1/2 py-2 px-1 sm:px-2">
+                            <div class="bg-white py-4 sm:py-6 px-2 sm:px-6 rounded-2xl shadow-lg">
+                                <div class="font-medium h-4 sm:h-6 mb-2 sm:mb-4 text-3xl">Vs</div>
+                                <div class="key-card py-2" id="card_vs"></div>
+                                <div class="flex justify-center pt-4">
+                                    <button type="button"
+                                        class="bg-gray-800 hover:bg-gray-600 font-medium py-1 px-4 rounded-xl text-white shadow-xl border-2 border-transparent focus:bg-gray-800 focus:border-gray-900 copy card_vs">
+                                        <i class="fas fa-copy"></i><span> Copy</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-1/2 py-2 px-1 sm:px-2">
+                            <div class="bg-white py-4 sm:py-6 px-2 sm:px-6 rounded-2xl shadow-lg">
+                                <div class="font-medium h-4 sm:h-6 mb-2 sm:mb-4 text-3xl">Or</div>
+                                <div class="key-card py-2" id="card_or"></div>
+                                <div class="flex justify-center pt-4">
+                                    <button type="button"
+                                        class="bg-gray-800 hover:bg-gray-600 font-medium py-1 px-4 rounded-xl text-white shadow-xl border-2 border-transparent focus:bg-gray-800 focus:border-gray-900 copy card_or">
+                                        <i class="fas fa-copy"></i><span> Copy</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Ads 1 -->
+                        <div class="w-full py-2 px-1 sm:px-2 block sm:hidden">
+                            <div class="bg-white py-4 sm:py-6 px-2 sm:px-6 rounded-2xl shadow-lg flex justify-center items-center">
+                                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2489885381183873" crossorigin="anonymous"></script>
+                                <!-- Soovle Mobile -->
+                                <ins class="adsbygoogle" style="display:inline-block;width:320px;height:100px" data-ad-client="ca-pub-2489885381183873" data-ad-slot="4773270096"></ins>
+                                <script>
+                                    (adsbygoogle = window.adsbygoogle || []).push({});
+                                </script>
+                            </div>
+                        </div>
+
+                        <div class="w-1/2 py-2 px-1 sm:px-2">
+                            <div class="bg-white py-4 sm:py-6 px-2 sm:px-6 rounded-2xl shadow-lg">
+                                <div class="font-medium h-4 sm:h-6 mb-2 sm:mb-4 text-3xl">Like</div>
+                                <div class="key-card py-2" id="card_like"></div>
+                                <div class="flex justify-center pt-4">
+                                    <button type="button"
+                                        class="bg-gray-800 hover:bg-gray-600 font-medium py-1 px-4 rounded-xl text-white shadow-xl border-2 border-transparent focus:bg-gray-800 focus:border-gray-900 copy card_like">
+                                        <i class="fas fa-copy"></i><span> Copy</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="px-4 sm:px-8 pt-4 md:pt-4 xl:pt-6">
                         <div class="py-4 flex justify-center sm:hidden">
                             <div class="w-full">
                                 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2489885381183873" crossorigin="anonymous"></script>
@@ -556,7 +950,7 @@
                                 </div>
                             </div>
                         </div>
-                    </footer>
+                    </div>
                 </div>
             </div>
 

@@ -26,12 +26,34 @@ const alphabet = [
   "y",
   "z",
 ];
+const whQuestion = [
+  "what",
+  "where",
+  "which",
+  "who",
+  "how",
+  "when",
+  "are",
+  "is",
+  "do",
+];
+const prefix = ["best", "most", "new", "unique", "learn", "how_to", "top"];
+const suffix = [
+  "to",
+  "must",
+  "with",
+  "for",
+  "under",
+  "and",
+  "vs",
+  "or",
+  "like",
+];
 let linkStyle = "text-gray-900 hover:underline hover:text-gray-800 py-1";
 
 $(document).ready(function () {
   $("#searchForm").submit(function (e) {
     e.preventDefault();
-
     const formData = new FormData(e.target);
     const value = formData.get("search");
     const newKeyList = {};
@@ -51,6 +73,7 @@ $(document).ready(function () {
 
         newKeyList[letter] = [...new Set(retList)];
       });
+
       QueryKeyword(keyword, "yahoo", function (res) {
         let retList = [];
         let { results } = res.gossip;
@@ -61,7 +84,6 @@ $(document).ready(function () {
         newKeyList[letter] = [...new Set(retList)];
       });
     });
-
     /**
      * Most Important Part
      */
@@ -86,6 +108,147 @@ $(document).ready(function () {
         }
       }
     }, 1800);
+
+    newKeywordWithQuestion = {};
+    whQuestion.map((wh) => {
+      const letter = wh;
+      const keyword = wh + " " + value;
+
+      QueryKeyword(keyword, "google", function (res) {
+        let retList = res[1];
+        newKeywordWithQuestion[letter] = [...new Set(retList)];
+      });
+
+      QueryKeyword(keyword, "bing", function (res) {
+        let retList = res[1];
+        newKeywordWithQuestion[letter] = [...new Set(retList)];
+      });
+
+      QueryKeyword(keyword, "yahoo", function (res) {
+        let retList = [];
+        let { results } = res.gossip;
+        results.forEach((e) => {
+          retList.push(e["key"]);
+        });
+
+        newKeywordWithQuestion[letter] = [...new Set(retList)];
+      });
+    });
+    /**
+     * Most Important Part 2
+     */
+    setTimeout(() => {
+      for (const key in newKeywordWithQuestion) {
+        if (Object.hasOwnProperty.call(newKeywordWithQuestion, key)) {
+          const element = newKeywordWithQuestion[key];
+          const card_id = key;
+          let htmlQuestion = "";
+
+          element.map((keyword) => {
+            htmlQuestion += `${keyword}<br/>`;
+          });
+
+          $("#questionCards").removeClass("hidden");
+          $(`#card_${card_id}`).empty().append(htmlQuestion);
+
+          CopyFunc(card_id, element);
+        }
+      }
+    }, 1500);
+
+    const newPrefixKeyword = {};
+    prefix.map((word) => {
+      const letter = word;
+      const keyword = word + " " + value;
+
+      QueryKeyword(keyword, "google", function (res) {
+        let retList = res[1];
+        newPrefixKeyword[letter] = [...new Set(retList)];
+      });
+
+      QueryKeyword(keyword, "bing", function (res) {
+        let retList = res[1];
+        newPrefixKeyword[letter] = [...new Set(retList)];
+      });
+
+      QueryKeyword(keyword, "yahoo", function (res) {
+        let retList = [];
+        let { results } = res.gossip;
+        results.forEach((e) => {
+          retList.push(e["key"]);
+        });
+
+        newPrefixKeyword[letter] = [...new Set(retList)];
+      });
+    });
+    /**
+     *  Most Important Part 2
+     */
+    setTimeout(() => {
+      for (const key in newPrefixKeyword) {
+        if (Object.hasOwnProperty.call(newPrefixKeyword, key)) {
+          const element = newPrefixKeyword[key];
+          const card_id = key;
+          let prefixHtml = "";
+          element.map((e) => {
+            prefixHtml += `${e}<br/>`;
+          });
+
+          $("#prefix").removeClass("hidden");
+
+          $(`#card_${card_id}`).empty().append(prefixHtml);
+
+          CopyFunc(card_id, element);
+        }
+      }
+    }, 2000);
+
+    const newSuffixKeyword = {};
+    suffix.map((word) => {
+      const letter = word;
+      const keyword = value + " " + word;
+
+      QueryKeyword(keyword, "google", function (res) {
+        let retList = res[1];
+        newPrefixKeyword[letter] = [...new Set(retList)];
+      });
+
+      QueryKeyword(keyword, "bing", function (res) {
+        let retList = res[1];
+        newPrefixKeyword[letter] = [...new Set(retList)];
+      });
+
+      QueryKeyword(keyword, "yahoo", function (res) {
+        let retList = [];
+        let { results } = res.gossip;
+        results.forEach((e) => {
+          retList.push(e["key"]);
+        });
+
+        newPrefixKeyword[letter] = [...new Set(retList)];
+      });
+    });
+    /**
+     *  Most Important Part 2
+     */
+    setTimeout(() => {
+      for (const key in newSuffixKeyword) {
+        if (Object.hasOwnProperty.call(newSuffixKeyword, key)) {
+          const element = newSuffixKeyword[key];
+          const card_id = key;
+          let prefixHtml = "";
+          element.map((e) => {
+            prefixHtml += `${e}<br/>`;
+          });
+
+          $("#suffix").removeClass("hidden");
+
+          $(`#card_${card_id}`).empty().append(prefixHtml);
+
+          CopyFunc(card_id, element);
+        }
+      }
+    }, 2500);
   });
 });
 
