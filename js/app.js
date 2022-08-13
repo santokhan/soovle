@@ -1,55 +1,3 @@
-const alphabet = [
-  "a",
-  "b",
-  "c",
-  "d",
-  "e",
-  "f",
-  "g",
-  "h",
-  "i",
-  "j",
-  "k",
-  "l",
-  "m",
-  "n",
-  "o",
-  "p",
-  "q",
-  "r",
-  "s",
-  "t",
-  "u",
-  "v",
-  "w",
-  "x",
-  "y",
-  "z",
-];
-const whQuestion = [
-  "what",
-  "where",
-  "which",
-  "who",
-  "how",
-  "when",
-  "are",
-  "is",
-  "do",
-];
-const prefix = ["best", "most", "new", "unique", "learn", "how_to", "top"];
-const suffix = [
-  "to",
-  "must",
-  "with",
-  "for",
-  "under",
-  "and",
-  "vs",
-  "or",
-  "like",
-];
-let linkStyle = "text-gray-900 hover:underline hover:text-gray-800 py-1";
 const copyAllKeys = {};
 
 $(document).ready(function () {
@@ -57,17 +5,26 @@ $(document).ready(function () {
     e.preventDefault();
     const formData = new FormData(e.target);
     const value = formData.get("search");
+    const country = formData.get("country");
+    const language = formData.get("language");
+
     const newKeyList = {};
 
     alphabet.map((e) => {
       const letter = e;
       const keyword = value + " " + e;
 
-      QueryKeyword(keyword, "google", function (res) {
-        let retList = res[1];
+      QueryKeyword(
+        keyword,
+        "google",
+        function (res) {
+          let retList = res[1];
 
-        newKeyList[letter] = [...new Set(retList)];
-      });
+          newKeyList[letter] = [...new Set(retList)];
+        },
+        country,
+        language
+      );
 
       QueryKeyword(keyword, "bing", function (res) {
         let retList = res[1];
@@ -116,7 +73,7 @@ $(document).ready(function () {
       const letter = wh;
       const keyword = wh + " " + value;
 
-      QueryKeyword(keyword, "google", function (res) {
+      QueryKeyword(keyword, country, language, "google", function (res) {
         let retList = res[1];
         newKeywordWithQuestion[letter] = [...new Set(retList)];
       });
@@ -164,7 +121,7 @@ $(document).ready(function () {
       const letter = word;
       const keyword = word + " " + value;
 
-      QueryKeyword(keyword, "google", function (res) {
+      QueryKeyword(keyword, country, language, "google", function (res) {
         let retList = res[1];
         newPrefixKeyword[letter] = [...new Set(retList)];
       });
@@ -213,7 +170,7 @@ $(document).ready(function () {
       const letter = word;
       const keyword = value + " " + word;
 
-      QueryKeyword(keyword, "google", function (res) {
+      QueryKeyword(keyword, country, language, "google", function (res) {
         let retList = res[1];
         newPrefixKeyword[letter] = [...new Set(retList)];
       });
@@ -258,7 +215,7 @@ $(document).ready(function () {
   });
 });
 
-function QueryKeyword(keyword, site, callback) {
+function QueryKeyword(keyword, site, callback, country, language) {
   let querykeyword = keyword;
   let website = site;
 
@@ -273,8 +230,10 @@ function QueryKeyword(keyword, site, callback) {
       jsonp: "jsonp",
       dataType: "jsonp",
       data: {
-        q: querykeyword,
         client: "chrome",
+        q: querykeyword,
+        gl: country,
+        hl: language,
       },
       success: callback,
     });
