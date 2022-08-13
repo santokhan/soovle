@@ -9,6 +9,11 @@ $(document).ready(function () {
     const country = formData.get("country");
     const language = formData.get("language");
 
+    $("#cards").addClass("hidden");
+    $("#questionCards").addClass("hidden");
+    $("#prefix").addClass("hidden");
+    $("#suffix").addClass("hidden");
+
     if (wildcard == "atoz") {
       const newKeyList = {};
       alphabet.map((e) => {
@@ -76,10 +81,16 @@ $(document).ready(function () {
         const letter = wh;
         const keyword = wh + " " + value;
 
-        QueryKeyword(keyword, country, language, "google", function (res) {
-          let retList = res[1];
-          newKeywordWithQuestion[letter] = [...new Set(retList)];
-        });
+        QueryKeyword(
+          keyword,
+          "google",
+          function (res) {
+            let retList = res[1];
+            newKeywordWithQuestion[letter] = [...new Set(retList)];
+          },
+          country,
+          language
+        );
 
         QueryKeyword(keyword, "bing", function (res) {
           let retList = res[1];
@@ -117,7 +128,7 @@ $(document).ready(function () {
             copyAllKeys[card_id] = element;
           }
         }
-      }, 1500);
+      }, 1000);
     }
 
     if (wildcard == "prepositions") {
@@ -126,10 +137,16 @@ $(document).ready(function () {
         const letter = word;
         const keyword = word + " " + value;
 
-        QueryKeyword(keyword, country, language, "google", function (res) {
-          let retList = res[1];
-          newPrefixKeyword[letter] = [...new Set(retList)];
-        });
+        QueryKeyword(
+          keyword,
+          "google",
+          function (res) {
+            let retList = res[1];
+            newPrefixKeyword[letter] = [...new Set(retList)];
+          },
+          country,
+          language
+        );
 
         QueryKeyword(keyword, "bing", function (res) {
           let retList = res[1];
@@ -168,17 +185,23 @@ $(document).ready(function () {
             copyAllKeys[card_id] = element;
           }
         }
-      }, 2000);
+      }, 1000);
 
       const newSuffixKeyword = {};
       suffix.map((word) => {
         const letter = word;
         const keyword = value + " " + word;
 
-        QueryKeyword(keyword, country, language, "google", function (res) {
-          let retList = res[1];
-          newPrefixKeyword[letter] = [...new Set(retList)];
-        });
+        QueryKeyword(
+          keyword,
+          "google",
+          function (res) {
+            let retList = res[1];
+            newPrefixKeyword[letter] = [...new Set(retList)];
+          },
+          country,
+          language
+        );
 
         QueryKeyword(keyword, "bing", function (res) {
           let retList = res[1];
@@ -216,7 +239,7 @@ $(document).ready(function () {
             copyAllKeyword[card_id] = element;
           }
         }
-      }, 2500);
+      }, 1000);
     }
   });
 });

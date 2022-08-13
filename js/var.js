@@ -31,6 +31,7 @@ const whQuestion = [
   "where",
   "which",
   "who",
+  "why",
   "how",
   "when",
   "are",
