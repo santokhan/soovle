@@ -50,6 +50,7 @@ const suffix = [
   "like",
 ];
 let linkStyle = "text-gray-900 hover:underline hover:text-gray-800 py-1";
+const copyAllKeys = {};
 
 $(document).ready(function () {
   $("#searchForm").submit(function (e) {
@@ -105,6 +106,7 @@ $(document).ready(function () {
           $(`#card_${card_id}`).empty().append(html);
 
           CopyFunc(card_id, element);
+          copyAllKeys[card_id] = element;
         }
       }
     }, 1800);
@@ -152,6 +154,7 @@ $(document).ready(function () {
           $(`#card_${card_id}`).empty().append(htmlQuestion);
 
           CopyFunc(card_id, element);
+          copyAllKeys[card_id] = element;
         }
       }
     }, 1500);
@@ -199,6 +202,8 @@ $(document).ready(function () {
           $(`#card_${card_id}`).empty().append(prefixHtml);
 
           CopyFunc(card_id, element);
+
+          copyAllKeys[card_id] = element;
         }
       }
     }, 2000);
@@ -246,6 +251,7 @@ $(document).ready(function () {
           $(`#card_${card_id}`).empty().append(prefixHtml);
 
           CopyFunc(card_id, element);
+          copyAllKeyword[card_id] = element;
         }
       }
     }, 2500);
@@ -370,17 +376,35 @@ function CopyFunc(cId, keywords) {
   const id = cId;
 
   const copyKeys = id.toUpperCase() + "\n" + keys.join("\n");
-
   const copyButton = document.querySelector(".card_" + id);
   copyButton.addEventListener("click", function (e) {
     navigator.clipboard.writeText(copyKeys);
-
     copyButton.innerHTML = "Copied";
     setTimeout(function () {
       copyButton.innerHTML = `<i class="fas fa-copy"></i><span> Copy</span>`;
     }, 3000);
   });
 }
+function copyAllKeyword() {
+  let copyKeys = "";
+  const downloadAll = document.getElementById("copy_all");
+  downloadAll.addEventListener("click", function (e) {
+    for (const key in copyAllKeys) {
+      if (Object.hasOwnProperty.call(copyAllKeys, key)) {
+        const element = copyAllKeys[key];
+        copyKeys += key.toUpperCase() + "\n" + element.join("\n");
+      }
+    }
+
+    navigator.clipboard.writeText(copyKeys);
+
+    downloadAll.innerHTML = "Copied";
+    setTimeout(function () {
+      downloadAll.innerHTML = `<i class="fas fa-copy"></i><span> Copy All Keywords</span>`;
+    }, 3000);
+  });
+}
+copyAllKeyword();
 
 function showHideAnswer(target) {
   const element = document.getElementById(target);
