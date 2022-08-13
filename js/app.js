@@ -197,7 +197,7 @@ $(document).ready(function () {
           "google",
           function (res) {
             let retList = res[1];
-            newPrefixKeyword[letter] = [...new Set(retList)];
+            newSuffixKeyword[letter] = [...new Set(retList)];
           },
           country,
           language
@@ -205,7 +205,7 @@ $(document).ready(function () {
 
         QueryKeyword(keyword, "bing", function (res) {
           let retList = res[1];
-          newPrefixKeyword[letter] = [...new Set(retList)];
+          newSuffixKeyword[letter] = [...new Set(retList)];
         });
 
         QueryKeyword(keyword, "yahoo", function (res) {
@@ -215,7 +215,7 @@ $(document).ready(function () {
             retList.push(e["key"]);
           });
 
-          newPrefixKeyword[letter] = [...new Set(retList)];
+          newSuffixKeyword[letter] = [...new Set(retList)];
         });
       });
       /**
