@@ -111,15 +111,15 @@
                     <!------------- Form  ------------->
                     <form class="py-0 px-4 sm:p-4 md:px-10 md:py-4" id="searchForm">
                         <div class="sm:px-2 md:px-10 flex item-center relative">
-                            <input class="w-full py-3 px-6 rounded-full appearance-none border-2 border-white leading-tight focus:outline-none  focus:border-gray-900 shadow-lg" id="search"
+                            <input class="w-full py-3 px-6 rounded-full appearance-none border-2 border-white leading-tight focus:outline-none  focus:border-gray-900 shadow-lg" id="search" required
                                 name="search" placeholder="Search your keyword">
                             <button type="submit" title="form_submit" class="absolute right-4 sm:right-14 top-3"><i class="fas fa-search text-xl"></i></button>
                         </div>
                         <div class="sm:px-2 md:px-10 flex justify-center item-center relative py-4">
                             <div class="w-1/2 py-2 px-4">
-                                <select id="wildcard" name="wildcard" autocomplete="on" title="wildcard"
+                                <select id="wildcard" name="wildcard" autocomplete="on" title="wildcard" required
                                     class="w-full py-3 px-6 rounded-full appearance-none border-2 border-white leading-tight focus:outline-none  focus:border-gray-900 shadow-lg text-gray-600">
-                                    <option value="">Wild Card</option>
+                                    <option value="" class="hidden">Wild Card</option>
                                     <option value="atoz">A-Z Keywords</option>
                                     <option value="questions">Questions</option>
                                     <option value="prepositions">Prepositions</option>
@@ -128,7 +128,7 @@
                             <div class="w-1/2 py-2 px-4">
                                 <select id="country" name="country" autocomplete="on" title="country"
                                     class="w-full py-3 px-6 rounded-full appearance-none border-2 border-white leading-tight focus:outline-none  focus:border-gray-900 shadow-lg text-gray-600">
-                                    <option value="">Country</option>
+                                    <option value="" class="hidden">Country</option>
                                     <option value="us">United States (us)</option>
                                     <option value="af">Afghanistan (af)</option>
                                     <option value="ax">Åland Islands (ax)</option>
@@ -383,7 +383,7 @@
                             <div class="w-1/2 py-2 px-4">
                                 <select id="language" name="language" title="language"
                                     class="w-full py-3 px-6 rounded-full appearance-none border-2 border-white leading-tight focus:outline-none  focus:border-gray-900 shadow-lg text-gray-600">
-                                    <option value="">Language</option>
+                                    <option value="" class="hidden">Language</option>
                                     <option value="en">English (default) (en)</option>
                                     <option value="ar">Arabic (ar)</option>
                                     <option value="bg">Bulgarian (bg)</option>
@@ -850,6 +850,7 @@
                                 </div>
                             </div>
                         </div>
+
                         <div class="w-1/2 py-2 px-1 sm:px-2">
                             <div class="bg-white py-4 sm:py-6 px-2 sm:px-6 rounded-2xl shadow-lg">
                                 <div class="font-medium h-4 sm:h-6 mb-2 sm:mb-4 text-3xl">Where</div>
@@ -881,6 +882,18 @@
                                 <div class="flex justify-center pt-4">
                                     <button type="button"
                                         class="bg-gray-800 hover:bg-gray-600 font-medium py-1 px-4 rounded-xl text-white shadow-xl border-2 border-transparent focus:bg-gray-800 focus:border-gray-900 copy card_who">
+                                        <i class="fas fa-copy"></i><span> Copy</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-1/2 py-2 px-1 sm:px-2">
+                            <div class="bg-white py-4 sm:py-6 px-2 sm:px-6 rounded-2xl shadow-lg">
+                                <div class="font-medium h-4 sm:h-6 mb-2 sm:mb-4 text-3xl">Why</div>
+                                <div class="key-card py-2" id="card_why"></div>
+                                <div class="flex justify-center pt-4">
+                                    <button type="button"
+                                        class="bg-gray-800 hover:bg-gray-600 font-medium py-1 px-4 rounded-xl text-white shadow-xl border-2 border-transparent focus:bg-gray-800 focus:border-gray-900 copy card_why">
                                         <i class="fas fa-copy"></i><span> Copy</span>
                                     </button>
                                 </div>
