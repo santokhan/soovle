@@ -1,8 +1,3 @@
-<?php
-require_once(__DIR__ . './simplehtmldom_1_9_1/simple_html_dom.php');
-require_once(__DIR__ . './scrape.php');
-?>
-
 
 <!DOCTYPE html>
 <html lang="en">
