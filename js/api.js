@@ -1,5 +1,7 @@
 const table = document.getElementById("titleLinkTable");
 const tbody = document.getElementById("titleLinkBody");
+// const serverURL = "http://localhost/ghexpert/scrape_google/client/server.php";
+const serverURL = "https://googlescrape1.herokuapp.com/";
 
 let keywordDifficultyArray = [];
 function assignResponse(KD) {
@@ -101,7 +103,7 @@ function keyword_decode(k, row) {
 
                     $.ajax({
                       type: "POST",
-                      url: "http://localhost/ghexpert/scrape_google/client/server.php",
+                      url: serverURL,
                       data: {
                         keyword: k,
                         row: e,
