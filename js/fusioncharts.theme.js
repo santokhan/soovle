@@ -517,7 +517,7 @@
               toolTipBorderRadius: "2",
               baseFont: "Source Sans Pro",
               baseFontColor: "#5A5A5A",
-              baseFontSize: "14",
+              baseFontSize: "30",
               xAxisNameFontBold: "0",
               yAxisNameFontBold: "0",
               sYAxisNameFontBold: "0",

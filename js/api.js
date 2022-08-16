@@ -1,16 +1,34 @@
 const table = document.getElementById("titleLinkTable");
 const tbody = document.getElementById("titleLinkBody");
-// const serverURL = "http://localhost/ghexpert/scrape_google/client/server.php";
-const serverURL = "https://googlescrape1.herokuapp.com/";
+const kdStatus = document.getElementById("kd-status");
+let serverURL = "http://localhost/ghexpert/scrape_google/client/index.php";
+serverURL = "https://googlescrape1.herokuapp.com/";
 
 let keywordDifficultyArray = [];
 function assignResponse(KD) {
   keywordDifficultyArray.push(KD);
   printTable(KD);
 
-  setTimeout(() => {
-    guageCharts(keywordDifficultyArray[0].competition);
-  }, 1000);
+  difficulty(keywordDifficultyArray[0].competition);
+  guageCharts(keywordDifficultyArray[0].competition);
+}
+function difficulty(value) {
+  if (value <= 20) {
+    kdStatus.innerHTML = "Very Easy";
+    kdStatus.classList.add("easy");
+  } else if (value >= 20 && value <= 40) {
+    kdStatus.innerHTML = "Easy";
+    kdStatus.classList.add("easy");
+  } else if (value >= 40 && value <= 60) {
+    kdStatus.innerHTML = "Moderate";
+    kdStatus.classList.add("medium");
+  } else if (value >= 60 && value <= 80) {
+    kdStatus.innerHTML = "Hard";
+    kdStatus.classList.add("hard");
+  } else if (value >= 80 && value <= 100) {
+    kdStatus.innerHTML = "Very Hard";
+    kdStatus.classList.add("hard");
+  }
 }
 
 $(document).ready(function () {
@@ -124,6 +142,6 @@ function keyword_decode(k, row) {
 
 function printTable(e) {
   td_link_title = `<td scope="row" class="py-2 px-6 font-medium text-sm text-gray-900">${e.keyword}</td>`;
-  td_search_volume = `<td class="py-2 px-6">${e.search_volume}</td>`;
+  td_search_volume = `<td class="py-2 px-6">${e.competition}</td>`;
   tbody.innerHTML += td_link_title + td_search_volume;
 }

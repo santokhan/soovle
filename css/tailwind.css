@@ -642,8 +642,17 @@ video {
   border-width: 2px;
 }
 
+.border-x {
+  border-left-width: 1px;
+  border-right-width: 1px;
+}
+
 .border-b {
   border-bottom-width: 1px;
+}
+
+.border-t {
+  border-top-width: 1px;
 }
 
 .border-white {
@@ -759,6 +768,10 @@ video {
   text-transform: uppercase;
 }
 
+.capitalize {
+  text-transform: capitalize;
+}
+
 .leading-tight {
   line-height: 1.25;
 }
@@ -814,6 +827,10 @@ body {
 
 #chart-container {
   height: 300px;
+}
+
+g[cursor] {
+  display: none !important;
 }
 
 .easy {

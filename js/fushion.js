@@ -9,7 +9,7 @@ function guageCharts(KD) {
       lowerlimit: "0",
       upperlimit: "100",
       showvalue: "1",
-      numbersuffix: "%",
+      numbersuffix: "",
       theme: "fusion",
       showtooltip: "0",
     },
