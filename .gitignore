@@ -1,5 +1,8 @@
 *.json
 *.config.js
 input.css
-/soovle
+*.md
+/example
 /node_modules
+*.copy.js
+.gitignore

@@ -53,6 +53,10 @@
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NBFQ9VS" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
+    <header class="flex justify-center bg-white shadow">
+        <div class="text-gray-900 py-2 text-2xl font-medium">Explore Keywords</div>
+    </header>
+
     <main>
         <div class="flex py-10">
             <!-- Desktop ads -->
@@ -105,23 +109,40 @@
                     </div>
 
 
-                    <div class="overflow-x-auto relative">
-                        <!-- Add hidden classname bellow  -->
-                        <table class="w-full text-sm text-left text-gray-500 hidden py-6" id="titleLinkTable">
-                            <thead class="text-xs text-gray-700 uppercase bg-gray-50">
+                    <div class="overflow-x-auto relative bg-white rounded-xl shadow-md py-6 hidden" id="titleLinkTable">
+                        <table class="w-full text-lg text-left text-gray-500 ">
+                            <thead class="text-gray-700 uppercase pt-4">
                                 <tr>
-                                    <th width="70%" class="py-3 px-6">Title & Link</th>
-                                    <th width="30%" class="py-3 px-6">KD</th>
+                                    <th width="70%" class="px-6 text-lg">Related Keywords</th>
+                                    <th width="30%" class="px-6">KD</th>
                                 </tr>
                             </thead>
                             <tbody id="titleLinkBody">
-                                <tr class="bg-white border-b hidden">
+                                <tr class="bg-white hidden">
                                     <td scope="row" class="py-2 px-6 font-medium text-gray-900 whitespace-nowrap">
-                                        <h3 class="required:text-xl font-medium text-gray-900 pt-1">Title</h3>
-                                        <div class="pb-2"><a href="https://www.facebook.com/&amp;sa=U&amp;ved=2ahUKEwjVrK_e08j5AhVklNgFHYdiC18QFnoECAUQAg&amp;usg=AOvVaw0gFpmsEdM5PfQPiBhVDsmV"
-                                                class="hover:opacity-80 hover:underline">www.example.com/...</a></div>
+                                        <h3 class="py-2 px-6 font-medium text-gray-900">keywords</h3>
                                     </td>
-                                    <td class="py-2 px-6 text-orange-300">13550</td>
+                                    <td class="py-2 px-6 font-medium">13550</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="my-6 bg-white rounded-xl shadow-md py-6 hidden" id="tablefortitlelink">
+                        <table class="w-full text-sm text-left text-gray-500">
+                            <thead class="text-xs text-gray-700 uppercase">
+                                <tr>
+                                    <th width="100%" class="px-6 text-lg" id="serpOverview">SERP overview</th>
+                                </tr>
+                            </thead>
+                            <tbody id="titlelink" class="pb-6">
+                                <tr class="hidden">
+                                    <td class="py-2 px-6 font-medium text-gray-900 whitespace-nowrap">
+                                        <h3 class="font-medium text-gray-900 pt-1"><span class="text-xl">FACEBOOK POST FOR SOMETHING</span> <span
+                                                class="text-sm opacity-80 bg-teal-200 px-1 rounded">weak</span></h3>
+                                        <div class="pb-2"><a href="https://www.facebook.com/&amp;sa=U&amp;ved=2ahUKEwjVrK_e08j5AhVklNgFHYdiC18QFnoECAUQAg&amp;usg=AOvVaw0gFpmsEdM5PfQPiBhVDsmV"
+                                                class="hover:opacity-80 hover:underline font-medium text-lg">www.example.com/...</a></div>
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>

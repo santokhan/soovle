@@ -1,16 +1,14 @@
 const table = document.getElementById("titleLinkTable");
-let tbody = document.getElementById("titleLinkBody");
+const tbody = document.getElementById("titleLinkBody");
+const serpOverview = document.getElementById("serpOverview");
 const kdStatus = document.getElementById("kd-status");
 let serverURL = "http://localhost/ghexpert/scrape_google/client/index.php";
-serverURL = "https://googlescrape1.herokuapp.com/";
+serverURL = "scrape.php";
 
 let keywordDifficultyArray = [];
 function assignResponse(KD) {
   keywordDifficultyArray.push(KD);
-  // printTable(KD);
-
-  difficulty(keywordDifficultyArray[0].competition);
-  guageCharts(keywordDifficultyArray[0].competition);
+  printTable(KD);
 }
 
 $(document).ready(function () {
@@ -19,11 +17,12 @@ $(document).ready(function () {
     let keyword = document.getElementById("search").value;
 
     keywordDifficultyArray = [];
-    // suggest(keyword);
-    keyword_decode(keyword);
+    suggest(keyword);
+    keyword_decode_for_guage(keyword);
     curl_request(keyword);
 
     table.classList.remove("hidden");
+    serpOverview.innerHTML = "SERP overview for " + keyword;
     tbody.innerHTML = "";
 
     console.log(keywordDifficultyArray);
@@ -122,10 +121,82 @@ function keyword_decode(k, row) {
     });
   }
 }
+function keyword_decode_for_guage(k, row) {
+  let e = row ? row : 1;
+
+  if (k && e) {
+    $.ajax({
+      url: "https://suggestqueries.google.com/complete/search",
+      jsonp: "jsonp",
+      dataType: "jsonp",
+      data: {
+        q: k,
+        client: "chrome",
+      },
+      success: function (data) {
+        $.ajax({
+          url: "https://suggestqueries.google.com/complete/search",
+          jsonp: "jsonp",
+          dataType: "jsonp",
+          data: {
+            q: k + " a",
+            client: "chrome",
+          },
+          success: function (data1) {
+            $.ajax({
+              url: "https://suggestqueries.google.com/complete/search",
+              jsonp: "jsonp",
+              dataType: "jsonp",
+              data: {
+                q: k + " aa",
+                client: "chrome",
+              },
+              success: function (data2) {
+                $.ajax({
+                  url: "https://suggestqueries.google.com/complete/search",
+                  jsonp: "jsonp",
+                  dataType: "jsonp",
+                  data: {
+                    q: k + " aaa",
+                    client: "chrome",
+                  },
+                  success: function (data3) {
+                    let uri =
+                      JSON.stringify(data[1]) +
+                      "|||" +
+                      JSON.stringify(data1[1]) +
+                      "|||" +
+                      JSON.stringify(data2[1]) +
+                      "|||" +
+                      JSON.stringify(data3[1]);
+
+                    $.ajax({
+                      type: "POST",
+                      url: serverURL,
+                      data: {
+                        keyword: k,
+                        row: e,
+                        sugdata: uri,
+                      },
+                      success: function (data) {
+                        difficulty(data.competition);
+                        guageCharts(data.competition);
+                      },
+                    });
+                  },
+                });
+              },
+            });
+          },
+        });
+      },
+    });
+  }
+}
 
 function printTable(e) {
-  td_link_title = `<td scope="row" class="py-2 px-6 font-medium text-sm text-gray-900">${e.keyword}</td>`;
-  td_search_volume = `<td class="py-2 px-6">${e.competition}</td>`;
+  td_link_title = `<td class="py-2 px-6 font-medium text-gray-900">${e.keyword}</td>`;
+  td_search_volume = `<td class="py-2 px-6 font-medium">${e.competition}</td>`;
   tbody.innerHTML += td_link_title + td_search_volume;
 }
 
