@@ -1,8 +1,0 @@
-*.json
-*.config.js
-input.css
-*.md
-/example
-/node_modules
-*.copy.js
-.gitignore
