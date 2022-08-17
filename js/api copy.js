@@ -1,5 +1,5 @@
 const table = document.getElementById("titleLinkTable");
-let tbody = document.getElementById("titleLinkBody");
+const tbody = document.getElementById("titleLinkBody");
 const kdStatus = document.getElementById("kd-status");
 let serverURL = "http://localhost/ghexpert/scrape_google/client/index.php";
 serverURL = "https://googlescrape1.herokuapp.com/";
@@ -19,8 +19,7 @@ $(document).ready(function () {
     let keyword = document.getElementById("search").value;
 
     keywordDifficultyArray = [];
-    // suggest(keyword);
-    keyword_decode(keyword);
+    suggest(keyword);
     curl_request(keyword);
 
     table.classList.remove("hidden");
@@ -52,6 +51,8 @@ function suggest(k) {
 /**
  * e means number of row. It will 10 or 1
  * k mean keyword
+ * @param {*} k
+ * @param {*} row
  */
 function keyword_decode(k, row) {
   let e = row ? row : 1;
